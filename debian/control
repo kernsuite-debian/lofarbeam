@@ -1,0 +1,26 @@
+Source: lofarbeam
+Section: science
+Priority: optional
+Maintainer: KERN packaging <packaging@kernsuite.info>
+Build-Depends: cmake, debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/lofar-astron/LOFARBeam
+
+Package: lofarbeam-dev
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, libelementresponse2, libstationresponse2
+Description: Stand-alone version of the LOFAR station response library
+
+Package: libelementresponse2
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: LOFAR element response library
+
+Package: libstationresponse2
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: LOFAR station response library
+

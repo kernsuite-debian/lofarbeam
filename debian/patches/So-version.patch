@@ -1,0 +1,14 @@
+Description: Set SO version
+
+--- lofarbeam-4.0.orig/CMakeLists.txt
++++ lofarbeam-4.0/CMakeLists.txt
+@@ -27,6 +27,9 @@ add_library(stationresponse SHARED
+ add_library(elementresponse SHARED
+   ElementResponse.cc)
+ 
++set_target_properties(stationresponse PROPERTIES VERSION 2)
++set_target_properties(elementresponse PROPERTIES VERSION 2)
++
+ install (TARGETS stationresponse DESTINATION lib)
+ install (TARGETS elementresponse DESTINATION lib)
+ 

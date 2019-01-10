@@ -1,0 +1,8 @@
+.debhelper/
+files
+*.debhelper.log
+*.substvars
+libelementresponse2/
+libstationresponse2/
+lofarbeam-dev/
+tmp/
