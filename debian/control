@@ -15,6 +15,7 @@ Depends:
  ${misc:Depends},
  libelementresponse2 (= ${binary:Version}),
  libstationresponse2 (= ${binary:Version})
+Conflicts: lofar-dev
 Description: Stand-alone version of the LOFAR station response library
  This package has undergone the same branching process as the DP3 package: it
  is a continuation of the LOFAR beam library at svn.astron.nl/LOFAR, and was
