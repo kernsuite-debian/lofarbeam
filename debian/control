@@ -8,19 +8,32 @@ Homepage: https://github.com/lofar-astron/LOFARBeam
 
 Package: lofarbeam-dev
 Architecture: any
-Multi-Arch: foreign
-Depends: ${misc:Depends}, libelementresponse2, libstationresponse2
+Depends:
+ ${misc:Depends},
+ libelementresponse2 (= ${binary:Version}),
+ libstationresponse2 (= ${binary:Version})
 Description: Stand-alone version of the LOFAR station response library
+ This package has undergone the same branching process as the DP3 package: it
+ is a continuation of the LOFAR beam library at svn.astron.nl/LOFAR, and was
+ extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
+ will likely not be maintained in the ASTRON repository.
 
 Package: libelementresponse2
 Architecture: any
-Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: LOFAR element response library
+ This package has undergone the same branching process as the DP3 package: it
+ is a continuation of the LOFAR beam library at svn.astron.nl/LOFAR, and was
+ extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
+ will likely not be maintained in the ASTRON repository.
 
 Package: libstationresponse2
 Architecture: any
-Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: LOFAR station response library
+ This package has undergone the same branching process as the DP3 package: it
+ is a continuation of the LOFAR beam library at svn.astron.nl/LOFAR, and was
+ extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
+ will likely not be maintained in the ASTRON repository.
+
 
