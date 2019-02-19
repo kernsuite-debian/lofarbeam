@@ -6,8 +6,8 @@ Description: Add SO version
  add_library(elementresponse SHARED
    ElementResponse.cc)
  
-+set_target_properties(stationresponse PROPERTIES VERSION 2) 
-+set_target_properties(elementresponse PROPERTIES VERSION 2) 
++set_target_properties(stationresponse PROPERTIES VERSION 3) 
++set_target_properties(elementresponse PROPERTIES VERSION 3) 
 +
 +
  install (TARGETS stationresponse DESTINATION lib)

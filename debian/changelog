@@ -1,3 +1,9 @@
+lofarbeam (4.0-1kern2) bionic; urgency=medium
+
+  * increment SO version
+
+ -- KERN packaging <packaging@kernsuite.info>  Tue, 19 Feb 2019 13:41:18 +0100
+
 lofarbeam (4.0-1kern1) bionic; urgency=low
 
   * Initial release.

@@ -13,8 +13,8 @@ Package: lofarbeam-dev
 Architecture: any
 Depends:
  ${misc:Depends},
- libelementresponse2 (= ${binary:Version}),
- libstationresponse2 (= ${binary:Version})
+ libelementresponse3 (= ${binary:Version}),
+ libstationresponse3 (= ${binary:Version})
 Conflicts: lofar-dev
 Description: Stand-alone version of the LOFAR station response library
  This package has undergone the same branching process as the DP3 package: it
@@ -22,7 +22,7 @@ Description: Stand-alone version of the LOFAR station response library
  extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
  will likely not be maintained in the ASTRON repository.
 
-Package: libelementresponse2
+Package: libelementresponse3
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: LOFAR element response library
@@ -31,7 +31,7 @@ Description: LOFAR element response library
  extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
  will likely not be maintained in the ASTRON repository.
 
-Package: libstationresponse2
+Package: libstationresponse3
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: LOFAR station response library
