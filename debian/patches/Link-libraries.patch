@@ -3,8 +3,8 @@ Description: Link libraries
 --- lofarbeam-4.0.orig/CMakeLists.txt
 +++ lofarbeam-4.0/CMakeLists.txt
 @@ -30,6 +30,8 @@ add_library(elementresponse SHARED
- set_target_properties(stationresponse PROPERTIES VERSION 2) 
- set_target_properties(elementresponse PROPERTIES VERSION 2) 
+ set_target_properties(stationresponse PROPERTIES VERSION 3) 
+ set_target_properties(elementresponse PROPERTIES VERSION 3) 
  
 +target_link_libraries(stationresponse c casa_casa casa_measures casa_tables casa_ms) 
 +target_link_libraries(elementresponse c)  

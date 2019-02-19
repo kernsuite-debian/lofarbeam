@@ -2,7 +2,7 @@
 files
 *.debhelper.log
 *.substvars
-libelementresponse2/
-libstationresponse2/
+libelementresponse*/
+libstationresponse*/
 lofarbeam-dev/
 tmp/
