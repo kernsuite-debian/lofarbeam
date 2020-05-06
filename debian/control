@@ -4,9 +4,9 @@ Priority: optional
 Maintainer: KERN packaging <packaging@kernsuite.info>
 Build-Depends:
  cmake,
- debhelper (>=9),
+ debhelper (>=11),
  casacore-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.5.0
 Homepage: https://github.com/lofar-astron/LOFARBeam
 
 Package: lofarbeam-dev
