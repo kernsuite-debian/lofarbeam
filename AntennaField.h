@@ -105,7 +105,7 @@ public:
         bool        enabled[2];
     };
 
-    typedef vector<Antenna> AntennaList;
+    typedef std::vector<Antenna> AntennaList;
 
 
     AntennaField(const string &name, const CoordinateSystem &coordinates);
@@ -162,6 +162,8 @@ public:
      *  \param freq Frequency of the plane wave (Hz).
      *  \param direction Direction of arrival (ITRF, m).
      *  \param direction0 Tile beam former reference direction (ITRF, m).
+     *  \param rotate true if the parallactic angle is to be rotated towards
+     *         the NCP. 
      *  \return Jones matrix that represents the response of the antenna field.
      *
      *  The directions \p direction, and \p direction0 are vectors that
@@ -170,7 +172,7 @@ public:
      *  wave arrives.
      */
     virtual matrix22c_t response(real_t time, real_t freq,
-        const vector3r_t &direction, const vector3r_t &direction0) const;
+        const vector3r_t &direction, const vector3r_t &direction0, const bool rotate = true) const;
 
     /*!
      *  \brief Compute the array factor of the antenna field for a plane wave of
@@ -206,7 +208,7 @@ public:
      *  const vector3r_t &direction0) const
      */
     virtual raw_response_t rawResponse(real_t time, real_t freq,
-        const vector3r_t &direction, const vector3r_t &direction0) const;
+        const vector3r_t &direction, const vector3r_t &direction0, const bool rotate = true) const;
 
     /*!
      *  \brief Compute the array factor of the antenna field for a plane wave of
@@ -227,10 +229,11 @@ public:
     /*!
      *  \brief Compute the response of a single antenna for a plane wave of
      *  frequency \p freq, arriving from direction \p direction.
-     *
+     *  \param rotate true if the parallactic angle is to be rotated towards
+     *         the NCP. 
      */
     virtual matrix22c_t elementResponse(real_t time, real_t freq,
-        const vector3r_t &direction) const = 0;
+        const vector3r_t &direction, const bool rotate = true) const = 0;
 
 protected:
     /** Compute the parallactic rotation. */
@@ -241,6 +244,7 @@ protected:
 
 private:
     vector3r_t ncp(real_t time) const;
+    vector3r_t ncppol0(real_t time) const;
 
     string              itsName;
     CoordinateSystem    itsCoordinateSystem;
@@ -248,6 +252,20 @@ private:
     ITRFDirection::Ptr  itsNCP;
     mutable real_t      itsNCPCacheTime;
     mutable vector3r_t  itsNCPCacheDirection;
+
+    /** Reference direction for NCP observations.
+     *
+     * NCP pol0 is the direction used as reference in the coordinate system
+     * when the target direction is close to/at the NCP. The regular coordinate
+     * system rotates local east to that defined with respect to the NCP, 
+     * which is undefined at the NCP. 
+     * It is currently defined as ITRF position (1.0, 0.0, 0.0).
+     *
+     * Added by Maaijke Mevius, December 2018.
+     */
+    ITRFDirection::Ptr  itsNCPPol0;
+    mutable real_t      itsNCPPol0CacheTime;
+    mutable vector3r_t  itsNCPPol0CacheDirection;
 };
 
 // @}
