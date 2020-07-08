@@ -5,7 +5,11 @@ Maintainer: KERN packaging <packaging@kernsuite.info>
 Build-Depends:
  cmake,
  debhelper (>=11),
- casacore-dev
+ casacore-dev (>=3.3.0),
+ libboost-python-dev,
+ libboost-numpy-dev,
+ libboost-dev,
+ python3-dev
 Standards-Version: 4.5.0
 Homepage: https://github.com/lofar-astron/LOFARBeam
 
@@ -40,4 +44,12 @@ Description: LOFAR station response library
  extracted from and branched off LOFAR Release 3.2. The LOFAR beam package
  will likely not be maintained in the ASTRON repository.
 
+Package: python3-lofarbeam
+Architecture: any
+Depends: ${shlibs:Depends},
+        ${misc:Depends},
+        ${python:Depends},
+		libstationresponse3,
+		libelementresponse3
+Description: LOFAR station response python bindings
 

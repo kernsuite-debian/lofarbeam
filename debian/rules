@@ -4,9 +4,11 @@ export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh $@  --parallel
+	dh $@  --parallel --with python3
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DCMAKE_LIBRARY_ARCHITECTURE="$(DEB_TARGET_MULTIARCH)" \
-		-DBUILD_PYTHON=Off
+		-DBUILD_PYTHON=ON \
+		 -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+		 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so.1 
