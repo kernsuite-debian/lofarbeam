@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ae1c525..db1189d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -80,8 +80,8 @@ if (BUILD_PYTHON)
+     message(STATUS "Python library ${PYTHON_LIBRARIES}")
+     set(BOOST_PY_FOUND TRUE)
+   else (${PYTHON_VERSION_MAJOR} VERSION_LESS "3")
+-    find_package (Boost REQUIRED COMPONENTS python3 numpy3)
+-    find_package (Casacore REQUIRED COMPONENTS python3)
++    find_package (Boost REQUIRED COMPONENTS python numpy)
++    find_package (Casacore REQUIRED COMPONENTS python3)
+     message(STATUS "Boost python library: ${Boost_PYTHON3_LIBRARY}")
+     message(STATUS "Boost numpy library: ${Boost_NUMPY3_LIBRARY}")
+     message(STATUS "Python library ${PYTHON_LIBRARIES}")

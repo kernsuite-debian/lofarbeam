@@ -1,2 +1,1 @@
-#Add-so-version.patch
-#Link-libraries.patch
+Remove-Check-for-Python3-component-of-Boost.patch
