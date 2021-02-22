@@ -11,4 +11,4 @@ override_dh_auto_configure:
 		-DCMAKE_LIBRARY_ARCHITECTURE="$(DEB_TARGET_MULTIARCH)" \
 		-DBUILD_PYTHON=ON \
 		 -DPYTHON_EXECUTABLE=/usr/bin/python3 \
-		 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so.1 
+		 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.8.so

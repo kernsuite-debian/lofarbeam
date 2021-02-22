@@ -6,9 +6,11 @@ Build-Depends:
  cmake,
  debhelper (>=11),
  casacore-dev (>=3.3.0),
+ dh-python,
  libboost-python-dev,
  libboost-numpy-dev,
  libboost-dev,
+ libpython3.8-dev,
  python3-dev
 Standards-Version: 4.5.0
 Homepage: https://github.com/lofar-astron/LOFARBeam
@@ -48,7 +50,7 @@ Package: python3-lofarbeam
 Architecture: any
 Depends: ${shlibs:Depends},
         ${misc:Depends},
-        ${python:Depends},
+        ${python3:Depends},
 		libstationresponse3,
 		libelementresponse3
 Description: LOFAR station response python bindings

@@ -1,3 +1,10 @@
+lofarbeam (4.1.1-1kern1) focal; urgency=medium
+
+  [ Athanaseus Javas Ramaila ]
+  * Build for focal
+
+ -- KERN packaging <packaging@kernsuite.info>  Thu, 21 Jan 2021 15:12:05 +0000
+
 lofarbeam (4.1.1-2) bionic; urgency=medium
 
   [ Gijs Molenaar ]
